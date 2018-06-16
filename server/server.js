@@ -6,6 +6,7 @@ const axios=require('axios');
 const app=express();
 const port=process.env.PORT || 3000;
 const API_KEY=process.env.APIKEY;
+const DARKSKY=process.env.DARK_API;
 const publicPath=path.join(__dirname,'../public');
 app.use(express.static(publicPath));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -27,7 +28,7 @@ var URLaddress = "https://maps.googleapis.com/maps/api/geocode/json?address="+en
 axios.get(URLaddress).then((response)=>{
 	var lat=response.data.results[0].geometry.location.lat;
 	var lng=response.data.results[0].geometry.location.lng;
-	var weatherURL=`https://api.darksky.net/forecast/0b41f07921b570e89c20fb37c448be3c/${lat},${lng}`;
+	var weatherURL=`https://api.darksky.net/forecast/${DARKSKY}/${lat},${lng}`;
 	return axios.get(weatherURL);
 }).then((response)=>{
 	console.log(JSON.stringify(response.data, undefined, 2))

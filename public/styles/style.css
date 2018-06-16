@@ -1,0 +1,30 @@
+#thelocation{
+	
+}
+
+.temp{
+	
+	border: 4px solid #3498DB;
+	color: #3498DB;
+	border-radius: 100%;
+	font-size: 2rem;
+	padding:30% 5%;
+}
+
+.loc{
+	color:#3498DB;
+}
+
+
+.loca{
+	
+	font-weight: 320;
+}
+
+
+h1{
+	background-color: #3498DB;
+	color: #fff;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px; 
+}

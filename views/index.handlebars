@@ -1,0 +1,34 @@
+
+<form action="/" method="POST">
+	<div class="form-group">
+		
+		<input type="text" name="location" class="form-control" placeholder="Entrer un endroit" required>
+	</div>
+	<input type="submit" value="Afficher" class="btn btn-primary btn-block" >
+</form>
+
+<section id="thelocation" class="row">
+{{#if temperature}}
+	<div class="col-12">
+		<h2 class="loca mt-3">Location <span class="loc" >{{location}}</span></h2>	
+	</div>
+	<div class="col-6 mx-auto">
+		<div class="temp mt-2 text-center">
+		{{temperature}}<sup>°C</sup>
+		</div>		
+	</div>
+
+	<div class="col-12 mt-3">
+		Humidité <span class="btn btn-outline-primary mr-3">{{humidity}}</span>
+		Pression <span class="btn btn-outline-primary">{{pressure}}</span>
+	</div>
+	
+	
+{{else if error}}
+	<h1 class="display-4">{{error}}</h1>
+{{else}}
+
+{{/if}}	
+
+
+</section>
